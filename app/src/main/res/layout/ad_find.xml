@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:ngl="http://schemas.android.com/apk/res-auto"
+			  android:orientation="vertical"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent">
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/tv_name"/>
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/tv_description"/>
+	<com.jaeger.ninegridimageview.NineGridImageView
+		android:layout_below="@+id/et_description"
+		android:id="@+id/ngl_images"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		ngl:imgGap="3dp"
+		ngl:showStyle="fill"
+		ngl:singleImgSize="50dp"/>
+</LinearLayout>

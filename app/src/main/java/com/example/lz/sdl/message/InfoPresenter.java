@@ -20,14 +20,12 @@ public class InfoPresenter implements InfoContract.ActionsListener {
 
     @Override
     public void saveInfo(Context context, InfoData infoData) {
-        InfoData u1 = new InfoData(infoData.getName(), infoData.getDescription(),infoData.getImgs());
+        InfoData u1 = new InfoData(infoData.getName(), infoData.getDescription(), infoData.getImgs());
         DatabaseHelper helper = DatabaseHelper.getHelper(context);
-        try
-        {
+        try {
             helper.getUserDao().create(u1);
 
-        } catch (SQLException e)
-        {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
@@ -40,15 +38,14 @@ public class InfoPresenter implements InfoContract.ActionsListener {
     @Override
     public void saveCache(InfoData infoData) {
         try {
-            if (infoData.getName().equals("")&&infoData.getImgs().equals("")&&infoData.getDescription().equals("")){
+            if (infoData.getName().equals("") && infoData.getImgs().equals("") && infoData.getDescription().equals("")) {
 
-            }else {
+            } else {
                 SharedPreferenceHelper.saveCacheData(infoData);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
 
 
     }
